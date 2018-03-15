@@ -17,11 +17,11 @@ const getters = {
 }
 
 const actions = {
-  resetProducts ({ commit },{cd="id",fd="prod-2"}={}) {
+  resetProducts ({ commit},load ) {
     var resetproduct
-    resetproduct=products.getProducts({cd="id",fd="prod-2"}={})
+    resetproduct=products.getProducts(load.cd,load.fd)
       commit("RECEIVE_PRODUCTS", resetproduct)
-      
+   
   },
 getAllProducts ({ commit }) {
   var resetproduct

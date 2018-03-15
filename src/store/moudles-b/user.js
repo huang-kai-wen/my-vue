@@ -3,7 +3,7 @@
 import  usercookie from './usercookie'
 import  useraxios from './useraxios'
 const state = {
-  usesee: true,
+  usesee: false,
   Logsee: true,
   forgetsee: false,
   regissee:false,

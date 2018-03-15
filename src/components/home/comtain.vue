@@ -13,13 +13,13 @@
         <div id="collapseOne" class="panel-collapse collapse in">
             <div class="panel-body">
                 
-                <li><el-button type="info" @click="changeproducts ()">荔枝</el-button></li>
+                <li><el-button type="info"   @click="changeproducts ('recommend',true)"> 荔枝</el-button></li>
                 <li><el-button type="info" @click="changeproducts ()">龙眼</el-button></li>
                 <li><el-button type="info" @click="changeproducts ()">柑子</el-button></li>
                 <li><el-button type="info" @click="changeproducts ()">葡萄</el-button></li>
                 <li><el-button type="info" @click="changeproducts ()">菜干</el-button></li>
                 <li><el-button type="info" @click="changeproducts ()">青枣</el-button></li>
-               
+                
             </div>
         </div>
     </div>
@@ -72,13 +72,16 @@
 <script>
 export default {
 methods: {
-  changeproducts () {
-     this.$store.dispatch('resetProducts')
-          
+  changeproducts (c,fdv) {
+      var payload
+      var cds
+     payload={cd:c,fd:fdv}
+       console.log( payload.cd)
+       this.$store.dispatch('resetProducts',payload)
         },
   rechangeproducts () {
-      this.$store.dispatch('getAllProducts')
-          
+          this.$store.dispatch('getAllProducts')
+           
         }      
    }
 }
@@ -91,6 +94,7 @@ methods: {
  display:block;margin-top:0.2rem;text-align:center;text-align: center;font-size:150%;cursor: pointer;
 }
 .foo5{float:left;}
-.panel-title{height:4rem;text-align:center;margin-top:2rem;}
+.panel-title{height:6rem;text-align:center;margin-top:2rem;}
 .panel-body li{height:4.5rem;}
 </style>
+ 

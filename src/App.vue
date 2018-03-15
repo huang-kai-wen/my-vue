@@ -1,42 +1,34 @@
 <template>
   <div id="app">
-
-   <thishead>  </thishead>
+    
+     <thishead> </thishead>
      <thisnav>  </thisnav>
-    <thiscomtain></thiscomtain>
+     <router-view></router-view>
      <thisfooter></thisfooter>
-      <thishid></thishid>
-      
-     <div id="show"><router-view/></div>
-   
   </div>
 </template>
 
 <script>
-
+import footer from './components/footer'
 import head from './components/head'
 import navbar from './components/navbar'
-import footer from './components/footer'
-import comtain from './components/comtain'
-import mhid from './components/hid'
+
 export default {
 
 components: {
-    thiscomtain: comtain,
+    
     thishead: head,
     thisfooter: footer,
-    thisnav: navbar,
+    thisnav: navbar
     
-    thishid: mhid
   },
   name: 'app'
 }
 </script>
 
 <style>
-#show {height:32rem;width:123rem;float:right;position:absolute;top:28rem;left:21rem;
-       overflow:hidden;      
- }
+
+html { overflow-x:hidden; }
 
 
 #app {

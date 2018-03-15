@@ -1,18 +1,47 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import pre from '@/components/predecessor'
-import forgetpassword from '@/components/loginpages/forgetpassword'
-import login from '@/components/loginpages/login'
-import regis from '@/components/loginpages/regis'
+import home from './../components/home'
+import forgetpassword from './..//components/loginpages/forgetpassword'
+import login from './../components/loginpages/login'
+import regis from './../components/loginpages/regis'
+import user from './../components/user/user'
+import about from './../components/about'
+import aboutus from './../components/aboutus'
+import prodetail from './../components/prodetail'
 Vue.use(Router)
 
 export default new Router({
-	mode: 'history',
+	 mode: 'history',
+   redirect: 'aboutus',
+
   routes: [
     {
+      path: '/aboutfarmer',
+      name: 'about',
+      component: about 
+      				
+    },
+    {
+      path: '/aboutus',
+      name: 'aboutus',
+      component: aboutus 
+      				
+    }, {
       path: '/',
-      name: 'prede',
-      component: pre 
+      name: 'home',
+      component: home 
+      				
+    }, {
+      path: '/prodetail',
+      name: 'prodetail',
+      component: prodetail 
+              
+    },
+   
+    {
+      path: '/user',
+      name: 'user',
+      component: user
       				
     }
   ]

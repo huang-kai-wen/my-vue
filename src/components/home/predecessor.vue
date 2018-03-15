@@ -10,15 +10,16 @@
                         <ul id="product-pic" v-bind:style="styleObject" @mouseenter="clerar()" @mouseleave="runInv()">
 
                           
-                            <li v-for="(items,index) in this.allProducts">
-                                <img  :src="items.src"  alt="标本1"/>
+                             <li v-for="(items,index) in this.allProducts"   >
+                            <router-link :to="{ name:'prodetail', params: {id:items.id } }">     <img  :src="items.src"  alt="标本1"/></router-link> 
                             </li>
+      
       
                         </ul>
                        
                         <div id="slider-page">
                         <div id="slider-b">
-                           <span><el-button type="primary" icon="el-icon-arrow-right" size="small"></el-button>
+                           <span><el-button type="primary" icon="el-icon-arrow-right" size="small" ></el-button>
                            </span>
                              <ul>
                           <a v-for="(items,index) in this.allProducts" ref="mybox">
@@ -73,6 +74,7 @@ export default {
  
   
 methods: {
+  
    clerar () {
       clearInterval(this.invId0)
       clearInterval(this.invId)
@@ -93,7 +95,7 @@ methods: {
   runInv () {
       
       this.invId = setInterval(() => {
-      if(this.index==7){
+      if(this.index==this.allProducts.length-2){
       this.index=1
       this. movestep (1)
       }else{
@@ -114,12 +116,13 @@ methods: {
       
     },  
     addclass () {
-      
-       var index=this.index
-       this.$refs.mybox[index].style.backgroundColor = "red";
-        this.$refs.mybox[index-1].style.backgroundColor = "#67C23A";
+        var index=this.index
+         if(typeof(this.$refs.mybox[index])=="undefined"){ return undefined}else{
+         this.$refs.mybox[index].style.backgroundColor = "red";
+         this.$refs.mybox[index-1].style.backgroundColor = "#67C23A";
          
-         if(this.index==2){this.$refs.mybox[7].style.backgroundColor = "#67C23A";}
+         if(this.index==2){this.$refs.mybox[this.allProducts.length-2].style.backgroundColor = "#67C23A";}} 
+        
     },  
  }, 
    mounted () {
@@ -134,11 +137,11 @@ methods: {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 *{list-style-type:none;}
-#product1{height:60rem;width:auto;float:left;
+#product1{height:60rem;width:135rem;float:left;overflow:hidden;
 
 }
 
-#product-pic{height:25rem;width:8000rem;position:absolute;}
+#product-pic{height:25rem;width:80000rem;position:absolute;}
 #product-pic li{float:left;margin-left:5rem;margin-bottom:2rem;height:25rem;}
 #product-pic li:first-child{float:left;margin-left:0rem;}
 #product-pic li img{height:25rem;width:35rem;}

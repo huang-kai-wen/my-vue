@@ -20,6 +20,6 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#instructions{ height:12rem;width:125rem;position:absolute;border-style: solid;
+#instructions{ height:15rem;width:125rem;position:absolute;border-style: solid;
 border-color:#1FBC37;top:65rem;left:15rem;z-index:-10; }
 </style>
