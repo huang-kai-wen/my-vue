@@ -1,6 +1,6 @@
 <template>
     <div class="magnifier-box" :ref="id" @mousemove="mousemove" @mouseover="mouseover" @mouseleave="mouseleave">
-        <img :src="url" alt="">
+        <img :src="url" alt="" class="pic">
         <div class="mouse-cover"></div>
     </div>
 </template>
@@ -51,9 +51,15 @@
             this.id=str
         },
         mounted(){
-            this.$nextTick(()=>{
-                this.initBox()
-            })
+            
+        },
+        watch: {
+    
+               url: function () {
+
+              
+               
+            }
         },
         methods: {
             initBox(){
@@ -85,8 +91,8 @@
                     this.canvas=document.createElement('canvas')
                     this.canvas.className='mouse-cover-canvas'
                     this.canvas.style.position='absolute'
-                    this.canvas.style.left=this.imgbox.offsetLeft+this.imgbox.offsetWidth+400+'px'
-                    this.canvas.style.top=this.imgbox.offsetTop+250+'px'
+                    this.canvas.style.left=$('.magnifier-box ').offset().left+$('.pic').width()+45+'px'
+                    this.canvas.style.top=this.imgbox.offsetTop+240+'px'
                     this.canvas.style.border='1px solid #eee'
                     this.canvas.style.zIndex='99999'
                     this.canvas.height=this.imgbox.offsetHeight
@@ -95,7 +101,7 @@
                     document.body.append(this.canvas)
                 }
                 this.ctx=this.canvas.getContext("2d");
-                
+                console.log(this.img.src)
             },
             mousemove(e){
                 if(!this.init){
@@ -158,13 +164,16 @@
                 }
                 this.cover.style.left=pos.x+'px'
                 this.cover.style.top=pos.y+'px'
-                this.ctx.clearRect(0,0,this.imgwrap.offsetWidth,this.imgwrap.offsetHeight);
+                this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
                 let startX=pos.x-(imgwrap.left-document.documentElement.scrollLeft),
                 startY=pos.y-(imgwrap.top-document.documentElement.scrollTop)
                 this.ctx.drawImage(this.img,startX*this.imgTimesX,startY*this.imgTimesY,this.img.width*this.rectTimesX,this.img.height*this.rectTimesY,0,0,this.imgbox.offsetWidth,this.imgbox.offsetHeight);
                 
             },
             mouseover(e){
+               this.$nextTick(()=>{
+                this.initBox()
+            })
                 if(!this.init){
                     return false
                 }
@@ -209,7 +218,9 @@
         .mouse-cover{
             position: fixed;
             background-color: rgba(0,0,0,0.5);
-            cursor:move
+            cursor:move;
+            width:100px;
+            height:100px;
         };
         .mouse-cover-canvas{
             position:fixed;

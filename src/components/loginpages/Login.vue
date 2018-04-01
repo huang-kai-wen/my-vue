@@ -5,11 +5,11 @@
         
         <el-form>
             <el-form-item label="user">
-                <el-input type="text" id="user" v-model="formName.username" @blur="inputBlur('user',formName.username)"></el-input>
+                <el-input type="text" id="user" v-model="formName.username" @change="inputBlur('user',formName.username)"></el-input>
                 <p>{{formName.userError}}</p>
             </el-form-item>
             <el-form-item label="password">
-                <el-input type="password" id="password" v-model="formName.password" @blur="inputBlur('password',formName.password)"></el-input>
+                <el-input type="password" id="password" v-model="formName.password" @change="inputBlur('password',formName.password)"></el-input>
                 <p>{{formName.passwordError}}</p>
             </el-form-item>
             <el-button type="primary" @click="submitForm(formName)" v-bind:disabled="formName.beDisabled">提交</el-button>

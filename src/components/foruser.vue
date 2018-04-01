@@ -1,7 +1,7 @@
 <template >
 <div class="dialog">
     <div class="loginPage">
-        <a @click="logsee()">登录</a> <a @click="regissee()">注册</a> <a @click="forgetsee()">忘记密码</a><p @click="closethis()">x</P> 
+        <a @click="logsee()">登录</a><p @click="closethis()" >x</P> 
         <div class="usercomt">
        <div class="dialog1" v-if="this.getLogsee"><thislog></thislog> </div>
        <div class="dialog1" v-else-if="this.getregissee"><thisregis></thisregis> </div>
@@ -88,13 +88,13 @@
         width: 30%;
         height: 3rem;
         border-bottom-style: solid;
-
+        margin-left:10rem;
         border-color:#1FBC37;
     }
     .loginPage p:hover{color:red;}
     .loginPage p{
-
-      margin-top:-3rem;
+       margin-left:30rem;
+      margin-top:-4rem;
       font-size:3rem;
     }
     .usercomt{

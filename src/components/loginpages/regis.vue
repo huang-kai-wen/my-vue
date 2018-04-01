@@ -67,7 +67,11 @@ import Axios from 'axios'
                 }else{
                     this.formName.beDisabled = true;
                 }
-            }
+            },
+            submitForm:function(formName){
+               this.$store.dispatch('resetuser',formName)
+               this.$store.dispatch('toogleusestate','usesee')
+            },
         }
     }
 

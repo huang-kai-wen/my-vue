@@ -6,7 +6,7 @@
     border
     style="width: 100%">
      <el-table-column
-      label="图片"
+      label="产品"
       width="180">
       <template slot-scope="scope">
        <p id="instructions1"> <img  :src="scope.row.src"  alt="标本1" /></p>
@@ -20,7 +20,7 @@
     </el-table-column>
     <el-table-column
       prop="date"
-      label="成交量"
+      label="数量"
       width="150">
     </el-table-column>
     <el-table-column

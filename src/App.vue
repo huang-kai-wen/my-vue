@@ -4,7 +4,9 @@
      <thishead> </thishead>
      <thisnav>  </thisnav>
      <router-view></router-view>
-     <thisfooter></thisfooter>
+
+    <div id="footer"> <thisfooter></thisfooter>  </div>
+
   </div>
 </template>
 
@@ -32,6 +34,7 @@ html { overflow-x:hidden; }
 
 
 #app {
+  position: relative;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -39,4 +42,5 @@ html { overflow-x:hidden; }
   color: #2c3e50;
   
 }
+
 </style>

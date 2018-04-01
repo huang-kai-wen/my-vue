@@ -2,6 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import  usercookie from './usercookie'
 import  useraxios from './useraxios'
+import qs from 'qs';
+import axios from 'axios';
 const state = {
   usesee: false,
   Logsee: true,
@@ -29,18 +31,28 @@ const getters = {
 
 const actions = {
   resetuser ({ commit },use) {
-    useraxios.axiospost(JSON.stringify(use))
-    usercookie.resetuser(use)
-      commit("getuser",use)
-       
-      
-  },
+     usercookie.resetuser(use)
+     commit("getuser",use)
+     console.log(use.username)
+     axios.post('http://192.168.0.5:3000/123',JSON.stringify({name:use.username,password:use.password})) 
+         .then(response => {
+         console.log(response);
+         })
+         .catch(err => {
+         console.log(err);
+      }) 
+  },   
  getcookieuser ({ commit }) {
   var cookieuser
-    cookieuser=usercookie.getuser()
+  cookieuser=usercookie.getuser()
     
-     commit("getuser",  cookieuser )
-     
+  commit("getuser",  cookieuser )
+    
+   
+   
+   
+   
+    
   },
  toogleusestate ({ commit },item) {
     commit("toogle",  item )
