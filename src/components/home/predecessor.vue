@@ -141,7 +141,7 @@ methods: {
 
 }
 
-#product-pic{height:25rem;width:80000rem;position:absolute;}
+#product-pic{height:25rem;width:8000rem;position:absolute;}
 #product-pic li{float:left;margin-left:5rem;margin-bottom:2rem;height:25rem;}
 #product-pic li:first-child{float:left;margin-left:0rem;}
 #product-pic li img{height:25rem;width:35rem;}

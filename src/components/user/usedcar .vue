@@ -112,7 +112,7 @@ export default {
 
     },
     getusepro(){
-      axios.post('http://192.168.0.5:3000/125',JSON.stringify({name:this.getnewuser.username})) 
+      axios.post('http://aokxf.com/125',JSON.stringify({name:this.getnewuser.username})) 
       .then(response => {
       
        this.useprod=response.data
@@ -163,14 +163,16 @@ export default {
     },
     delectdata(arr,val){
        
-      for(var i=0; i<arr.length; i++) {
-        if(arr[i].time == val) {
-        arr.splice(i, 1);
-       
-        break;
+     function calculate(arr,val){
+       for(var i=0; i<arr.length; i++) {
+          if(arr[i].time == val) {
+           arr.splice(i, 1);
+           break;
+          }
         }
+        return  arr;
       }
-
+      this. postnewdata(calculate(arr,val))
     },
     checkall(){
        $('.heht1').prop('checked',true);
@@ -178,9 +180,10 @@ export default {
     delectcheckal(){
      $('.heht1').prop('checked',false);
     },
+
     postnewdata(x){
-      console.log(this.getnewuser.username)
-       axios.post('http://192.168.0.5:3000/124',JSON.stringify({name:this.getnewuser.username,product:x})) 
+      console.log(x)
+       axios.post('http://aokxf.com/124',JSON.stringify({name:this.getnewuser.username,product:x})) 
         .then(response => {
         console.log(response);
         

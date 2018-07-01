@@ -30,7 +30,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#footer{ width:100%;background:#E8E8E8;  margin-top:60px;float:left;  }
+#footer{ width:150rem;background:#E8E8E8;  margin-top:60px;float:left;  }
 .footer-content{ margin:0 auto; height:15rem;width:16rem; overflow:hidden;float:left;margin-left:33rem;margin-top:1.5rem;}
 .footer-content span{float:left;margin-left:5rem;}
 

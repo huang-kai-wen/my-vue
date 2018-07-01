@@ -37,7 +37,7 @@
 </template>
 
 <script> 
-import PicZoom from './PicZoom'
+import PicZoom from './piczoom'
 import axios from 'axios';
 import { mapGetters, mapActions  } from 'vuex'
 export default {
@@ -56,7 +56,7 @@ export default {
   },
   name: 'App',
 components: {
- PicZoom
+  PicZoom
  },
   
   computed:{
@@ -87,14 +87,14 @@ components: {
     },
  getmysqldata(){
     
-   axios.post('http://192.168.0.5:3000/125',JSON.stringify({name:this.getnewuser.username})) 
+   axios.post('http://aokxf.com/125',JSON.stringify({name:this.getnewuser.username})) 
       .then(response => {
-     
+       if(response.data==null){return}else{
        this.olddataproobj=response.data
         
       console.log(response.data[0].time)
       console.log("旧的是"+ this.olddataproobj.length);
-     })
+    }})
      .catch(err => {
       console.log(err);
     }) 
@@ -119,13 +119,13 @@ components: {
        
       
        console.log("新的是"+this.olddataproobj.length);
-       var c=this.olddataproobj
+       var c=this.olddataproobj;
        c.push({time:currentdate,prodct:this.proobj})
        
     var cl=[{time:currentdate,prodct:this.proobj}]
    
     console.log(this.getnewuser.username)
-    axios.post('http://192.168.0.5:3000/124',JSON.stringify({name:this.getnewuser.username,product:c})) 
+    axios.post('http://aokxf.com/124',JSON.stringify({name:this.getnewuser.username,product:c})) 
       .then(response => {
      console.log(response);
        callback
@@ -151,7 +151,7 @@ components: {
  },
   mounted () {
      this.getmysqldata()
-    this.getproid ();
+     this.getproid ();
     this.smallpic=this.proobj.src
 
 

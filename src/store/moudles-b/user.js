@@ -9,12 +9,22 @@ const state = {
   Logsee: true,
   forgetsee: false,
   regissee:false,
+  mobileFlg:false,
+  mobileprompt:"手机版",
   user: {}
   
 }
 const mutations = {
   getuser (state, use) {
     state.user = use
+  },
+  tooglemobileFlg (state) {
+    
+   state.mobileFlg=!state.mobileFlg;
+
+   (state.mobileFlg == false) ? state.mobileprompt="手机版" : state.mobileprompt="电脑版"; 
+    console.log ( state.mobileFlg) 
+    
   },
   toogle (state,item) {
     state[item] =!state[item]
@@ -26,6 +36,8 @@ const getters = {
   getLogsee: function(state){ return state.Logsee },
   getforgetser: function(state){ return state.forgetsee },
   getregissee: function(state){ return state.regissee },
+  getmbprompt: function(state){ return state.mobileprompt },
+  getmbFlg: function(state){ return state.mobileFlg },
   getusesee: function(state  ){ return state.usesee }
 } 
 
@@ -34,7 +46,7 @@ const actions = {
      usercookie.resetuser(use)
      commit("getuser",use)
      console.log(use.username)
-     axios.post('http://192.168.0.5:3000/123',JSON.stringify({name:use.username,password:use.password})) 
+     axios.post('http://aokxf.com/123',JSON.stringify({name:use.username,password:use.password})) 
          .then(response => {
          console.log(response);
          })
@@ -56,6 +68,9 @@ const actions = {
   },
  toogleusestate ({ commit },item) {
     commit("toogle",  item )
+  },
+  tooglemobilestate ({ commit }) {
+    commit("tooglemobileFlg" )
   }
  } 
 export default {

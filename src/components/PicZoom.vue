@@ -6,7 +6,7 @@
 </template>
 
 <script>
-    export default {
+   export default {
         props:{
             scale:{
                 type:Number,
@@ -49,20 +49,10 @@
                 str += $chars.charAt(Math.floor(Math.random() * maxPos));
         　　}
             this.id=str
-        },
-        mounted(){
-            
-        },
-        watch: {
-    
-               url: function () {
-
-              
-               
-            }
-        },
+        },       
+       
         methods: {
-            initBox(){
+           initBox(){
                 let box=this.$refs[this.id]
                 this.imgbox=box
                 this.cover=box.querySelector('.mouse-cover')
@@ -197,14 +187,14 @@
                 }
                 this.cover.style.display='none'
                 this.canvas.style.display='none'
-            },
+            }, 
             
         }
-    }
+    } 
 </script>
 
-<style lang="scss" scoped>
-    .magnifier-box{
+<style  scoped>
+  .magnifier-box{
         width: 100%;
         height: 100%;
         display: flex;
@@ -229,6 +219,5 @@
             width:100%;
             height:100%;
         }
-    }
+    }  
 </style>
-

@@ -79,5 +79,9 @@ module.exports = {
     net: 'empty',
     tls: 'empty',
     child_process: 'empty'
-  }
+  },
+  externals: {
+"citypicker": "city-picker" ,
+"ChineseDistricts": "city-picker.data"
+}
 }
