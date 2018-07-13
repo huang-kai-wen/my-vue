@@ -31,7 +31,7 @@
    </div >
    <div class="col-xs-3 col-sm-1" 
          style="margin-left:2rem;
-         "><a >注销</a>
+         "><a @click="logout()">注销</a>
    </div >
  </div >     
   
@@ -45,20 +45,28 @@
 import { mapGetters, mapActions  } from 'vuex'
 import foruser from './foruser'
 export default {
+  
 
  methods: {
+ 
+
     changeusersee() {
      this.$store.dispatch('toogleusestate','usesee')
     },
     changembprompt() {
      this.$store.dispatch('tooglemobilestate')
     },
+     logout:function(formName){
+               this.$store.dispatch('userlogout',"")
+               window.location.href ="http://192.168.0.7:8080/";
+      
+      },
    usercenter() {
     this.$router.push({
      path: '/user'
      });
     }
-    },
+  },
 
  computed:{
   ...mapGetters([

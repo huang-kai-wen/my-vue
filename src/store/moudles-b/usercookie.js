@@ -37,5 +37,33 @@ export default {
         }else{
       return null
     } 
+  },
+  delectuser(){
+    var strCookie=document.cookie; 
+    var arrCookie=strCookie.split("; ");
+    for(var i=0;i<arrCookie.length;i++){ 
+        var arr=arrCookie[i].split("="); 
+        if(arr[0]=="username") {
+         var date = new Date(); 
+        date.setTime(date.getTime() - 10000); 
+        document.cookie = "username" + "=a; expires=" + date.toGMTString(); 
+        }
+        if(arr[0]=="password") {
+          var date = new Date(); 
+        date.setTime(date.getTime() - 10000); 
+        document.cookie = "password" + "=a; expires=" + date.toGMTString(); 
+        }
+        if(arr[0]=="adress") {
+         var date = new Date(); 
+        date.setTime(date.getTime() - 10000); 
+        document.cookie = "adress" + "=a; expires=" + date.toGMTString(); 
+        }
+        if(arr[0]=="phone") {
+        var date = new Date(); 
+        date.setTime(date.getTime() - 10000); 
+        document.cookie = "phone"+ "=a; expires=" + date.toGMTString(); 
+        }  
+       }  
+    
   }
 }

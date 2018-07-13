@@ -1,6 +1,8 @@
 <template>
   <div id="detai">
-  <div id="dd">
+
+  
+  <div id="dd" >
   <div id="detaiimg" >
             <pic-zoom :url="this.smallpic" :scale="3"></pic-zoom>
 
@@ -44,7 +46,8 @@ export default {
 
   data () {
     return {
-
+      cat: true,
+       car: false,
     smallpic: "",
      beDisabled: false,
      count: 1, 
@@ -67,7 +70,7 @@ components: {
   ])},
  methods: {
   beforruter(){
-    if(typeof(this.getnewuser.username)=="undefined" | typeof(this.getnewuser.username)==null){
+    if(typeof(this.getnewuser.username)=="undefined" | typeof(this.getnewuser.username)==null | this.getnewuser.username==""){
     this.$store.dispatch('toogleusestate','usesee')
     }else{
       var p=this.getmysqldata()
@@ -87,7 +90,8 @@ components: {
     },
  getmysqldata(){
     
-   axios.post('http://aokxf.com/125',JSON.stringify({name:this.getnewuser.username})) 
+   axios.post('http://192.168.0.7:3000/125',JSON.stringify({name:this.getnewuser.username})) 
+   //aokxf.com/125
       .then(response => {
        if(response.data==null){return}else{
        this.olddataproobj=response.data
@@ -153,7 +157,7 @@ components: {
      this.getmysqldata()
      this.getproid ();
     this.smallpic=this.proobj.src
-
+   
 
 
       

@@ -47,6 +47,7 @@ const actions = {
      commit("getuser",use)
      console.log(use.username)
      axios.post('http://aokxf.com/123',JSON.stringify({name:use.username,password:use.password})) 
+    //http://aokxf.com/123
          .then(response => {
          console.log(response);
          })
@@ -55,17 +56,15 @@ const actions = {
       }) 
   },   
  getcookieuser ({ commit }) {
-  var cookieuser
-  cookieuser=usercookie.getuser()
-    
-  commit("getuser",  cookieuser )
-    
-   
-   
-   
-   
-    
+    var cookieuser
+    cookieuser=usercookie.getuser()
+    commit("getuser",  cookieuser )
   },
+  userlogout({ commit },use) {
+
+    usercookie.delectuser()
+    commit("getuser",use)
+  }, 
  toogleusestate ({ commit },item) {
     commit("toogle",  item )
   },

@@ -6,11 +6,18 @@
      <p>您可以先驾车到钦州市再到长滩镇再到高床岭然后打开电脑打开英雄联盟插眼TP到指定位置</P>
     
 
-
-
-
-
-
+<div id="ap">
+    <el-cascader
+      size="large"
+      :options="options"
+      v-model="selectedOptions"
+      @change=" handleChange">
+    </el-cascader>
+   
+    <input type="text" class="form-control" id="name" placeholder="请输入道路名称" v-model="street" @change="changemyder">
+    <input type="text" class="form-control"  placeholder="地址" v-model="finalderection">
+ </div> 
+ 
 
 
 
@@ -23,26 +30,7 @@
  <div id="container"></div> 
 
 
-<div class="docs-methods">
-        <form class="form-inline">
-            <div id="distpicker">
-                <div class="form-group">
-                    <div style="position: relative;">
-                        <input id="city-picker3" class="form-control" readonly type="text" value="广东/广州市/番禺区/石楼镇"
-                               data-toggle="city-picker">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-warning" id="reset" type="button">reset</button>
-                   
 
-                   
-                 
-                </div>
-            </div>
-        </form>
-   
-</div>
 
 
 
@@ -55,9 +43,31 @@
 </template>
 
 <script>
+import { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlus, CodeToText, TextToCode } from 'element-china-area-data'
 export default {
-
+    data () {
+      return {
+       
+         options: regionDataPlus,
+        selectedOptions: [],
+        street:"",
+        finalderection:"",
+      }
+    },
     methods: {
+        handleChange (value) {
+        console.log(CodeToText[value[0]])
+        this.finalderection=""
+        this.street=""
+       },
+        
+       changemyder(){
+         for(var i=0;i<=this.selectedOptions.length-1;i++){
+         this.finalderection=this.finalderection+CodeToText[this.selectedOptions[i]]
+        }
+       this.finalderection=this.finalderection+this.street
+       this.loadmapapi()
+       },
        loadmapapi(){
       
       
@@ -73,8 +83,9 @@ export default {
                  autoViewport: true    
                 }    
            });    
-driving.search("中关村", "钦州市钦北区长滩镇新勤村");
-    }    
+           driving.search(this.finalderection, "钦州市钦北区长滩镇新勤村");
+    } 
+
     },
    mounted(){
     this.loadmapapi()
@@ -88,6 +99,7 @@ driving.search("中关村", "钦州市钦北区长滩镇新勤村");
 #map *{float:left;}
 #calcu{height:auto;width:30rem;margin-top:3.5rem;text-align: left;margin-left:1.5rem;
 }
+#ap >:first-child{width:30rem;}
 #calcu p{margin-left:1.5rem;border-bottom: 1px solid gray;}
 #container{height:50rem;width:115rem;margin-left:1.5rem;}
 </style>

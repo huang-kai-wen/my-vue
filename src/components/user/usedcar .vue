@@ -1,5 +1,7 @@
  <template>
-<div class="foo6">
+ <div>
+ <div  id="cat"  v-if="!this.cat"><img src="../../../static/images/cat.jpg"  alt="电话"/> </div>
+<div class="foo6"  v-if="this.cat">
 
 
    <h1>购物车</h1>
@@ -63,6 +65,7 @@
   <div id="opertation"><h1 @click="checkall">全选</h1><h1 @click="delectcheckal">取消全选</h1>
   <h1 @click="delectmark(useprod, marck)">删除</h1><h1>总价：{{ totalMoney | chineseYuan }}</h1><h1>结帐</h1></div>
 </div>
+</div>
 </template>
 
 <script>
@@ -71,6 +74,7 @@ import { mapGetters, mapActions  } from 'vuex'
 export default {
   data () {
     return {
+    cat:false,
      useprod: [],
      marck: [],
      totalMoney:0,
@@ -117,6 +121,7 @@ export default {
       
        this.useprod=response.data
        console.log(this.useprod.length)
+       if(this.useprod.length>0){this.cat=true}
       })
        .catch(err => {
        console.log(err);
@@ -184,6 +189,7 @@ export default {
     postnewdata(x){
       console.log(x)
        axios.post('http://aokxf.com/124',JSON.stringify({name:this.getnewuser.username,product:x})) 
+       //http://aokxf.com/124
         .then(response => {
         console.log(response);
         
@@ -198,6 +204,7 @@ export default {
 
   created(){
    this.getusepro()
+
    
   }
   
@@ -206,6 +213,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#cat{}
 .heht{height:15rem;}
 .heht p{height:3rem;margin-top:8rem}
 .heht img{height:13rem;margin-top:5rem}
