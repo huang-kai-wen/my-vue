@@ -4,6 +4,7 @@
    <ul class="nav nav-pills">
       <li ><a href="#"><router-link to="/">&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;首页</router-link ></a></li>
       <li><a href="#"><router-link to="/aboutfarmer">农场介绍</router-link ></a></li>
+       <li><a href="#"><router-link to="/product">主要产品</router-link ></a></li>
       <li><a href="#"><router-link to="/aboutus">交通路线</router-link ></a></li>
      <li ><a href="#"><input type="text" class="form-control" id="lastname" placeholder="搜索产品"></a></li>
    </ul>

@@ -67,7 +67,9 @@ components: {
 
 <style>
 
-html { overflow-x:hidden;
+html { 
+   overflow-x:hidden;
+ 
    
  }
 img{
@@ -76,9 +78,10 @@ img{
 
   
 #app {
-  width:1536px;
+  width:150rem;
   margin:0 auto;
-  overflow:hidden;
+ // overflow-x:scroll;
+  //  -ms-overflow-x:scroll;
   position: relative;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

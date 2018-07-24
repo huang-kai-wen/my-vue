@@ -1,6 +1,6 @@
  <template>
  <div>
- <div  id="cat"  v-if="!this.cat"><img src="../../../static/images/cat.jpg"  alt="电话"/> </div>
+ <div  id="cat"  v-if="!this.cat"><router-link :to="{ name:'prodetail', params: {id:this.id} }">     <img src="../../../static/images/cat.jpg"  alt=""/></router-link>  </div>
 <div class="foo6"  v-if="this.cat">
 
 
@@ -74,6 +74,7 @@ import { mapGetters, mapActions  } from 'vuex'
 export default {
   data () {
     return {
+    id:"prod-1",
     cat:false,
      useprod: [],
      marck: [],

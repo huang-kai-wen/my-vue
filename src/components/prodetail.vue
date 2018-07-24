@@ -27,7 +27,7 @@
         <el-row>
            <el-col :span="15"><div class="pro">  <el-button type="success"  @click=" beforruter()" plain><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" 
            >加入购物车</span></el-button>
-             <el-button type="primary" plain>点击购买</el-button>
+             <el-button type="primary" plain @click="checkout()"  >点击购买</el-button>
             </div></el-col>
            </el-row>
      </div>
@@ -80,6 +80,9 @@ components: {
                       
     }
   },
+  checkout(){
+    alert("未实现购物功能")
+  },
   
   getproid () {
       var proid=this.$route.params.id 
@@ -90,7 +93,7 @@ components: {
     },
  getmysqldata(){
     
-   axios.post('http://192.168.0.7:3000/125',JSON.stringify({name:this.getnewuser.username})) 
+   axios.post('http://aokxf.com/125',JSON.stringify({name:this.getnewuser.username})) 
    //aokxf.com/125
       .then(response => {
        if(response.data==null){return}else{
@@ -129,9 +132,14 @@ components: {
     var cl=[{time:currentdate,prodct:this.proobj}]
    
     console.log(this.getnewuser.username)
-    axios.post('http://aokxf.com/124',JSON.stringify({name:this.getnewuser.username,product:c})) 
+    axios.post('http://192.168.0.7:3000/124',JSON.stringify({name:this.getnewuser.username,product:c})) 
       .then(response => {
-     console.log(response);
+        if(response.data=="数据更新成功"){alert("成功加入购物车")
+        this.$router.push({ name: 'product'})
+      }else{
+        alert("加入购物车失败")
+      };
+        
        callback
 
      }) 
@@ -169,17 +177,27 @@ components: {
 <style scoped>
 
 #detaiimg{position:relative;float:left;}
-#detaitab{position:relative;float:left;margin-left:3rem;height:25rem;}
+#detaitab{position:relative;float:left;margin-left:3rem;height:25rem;margin-top:13rem;}
 #detai{margin-left:38rem;width:100rem;}
 #detaiinst{width:80rem;float:left;}
 .pro{float:left;}
-#smallpic img{height:8rem;width:10rem;float:left;margin-left:0.5rem;margin-top:0.8rem;}
+#smallpic {
+  width:45rem;
+
+}
+#smallpic img{
+  height:8rem;
+  width:10rem;
+  float:left;
+  margin-left:0.5rem;
+  margin-top:0.8rem;
+  }
 .el-row {
     height:4.5rem;
     width: 45rem;
     background-image:none ;
     
-    margin-bottom: 20px;
+    margin-bottom: 2px;
     &:last-child {
       margin-bottom: 0;
 

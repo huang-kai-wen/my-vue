@@ -89,11 +89,11 @@
         padding: 30px 20px 20px;
         border-radius: 8px;
         box-sizing: border-box;
-        background-color: #fff;
+       
     }
     .loginPage1 p{
        margin-top:1rem; 
-       font-size:1.5rem; 
+       font-size:16px; 
        width: 15rem;
        margin-left: 1rem;
         color: red;

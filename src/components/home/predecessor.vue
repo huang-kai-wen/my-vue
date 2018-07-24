@@ -19,7 +19,7 @@
                        
                         <div id="slider-page">
                         <div id="slider-b">
-                           <span><el-button type="primary" icon="el-icon-arrow-right" size="small" ></el-button>
+                           <span><el-button type="primary" icon="el-icon-arrow-right" size="small"  @click="gotopre ()"></el-button>
                            </span>
                              <ul>
                           <a v-for="(items,index) in this.allProducts" ref="mybox">
@@ -29,7 +29,7 @@
                             
                            
                             </ul>
-                            <span> <el-button type="primary" icon="el-icon-arrow-left" size="small"></el-button>
+                            <span> <el-button type="primary" icon="el-icon-arrow-left" size="small" @click="gotonext ()"></el-button>
                             </span>
                             </div>
 
@@ -52,10 +52,11 @@ export default {
        index: 1,
        i: true,
         ind: 0,
+        
       styleObject: {
       
-  left:"0em"
-  }
+         left:"0em"
+      }
     }
 
   },
@@ -80,12 +81,39 @@ methods: {
       clearInterval(this.invId)
     },
   
-    goto (index) {
+    gotopre () {
+      this.clerar ()
       
-      this.styleObject.left=-index*40+"rem"
+      setTimeout( this.runInv(),200)
+      if(this.index==1){
+       this.index==1
+       this.addclass()
+      }else{
+         this.$refs.mybox[0].style.backgroundColor = "#67C23A";
+        this.index=this.index-1
+        this.addclass()
+        this.ind=0
+        this.styleObject.left=-this.index*40+"rem"
+        }
+    },
+    gotonext () {
+       this.clerar ()
+       
+       setTimeout( this.runInv(),200)
+      if(this.index==this.allProducts.length-2){
+       this.index==this.allProducts.length-2
+       this.addclass()
+      }else{
+         this.$refs.mybox[this.allProducts.length-2].style.backgroundColor = "#67C23A";
+        this.index=this.index+1
+        this.addclass()
+        this.ind=0
+        this.styleObject.left=-this.index*40+"rem"
+        }
     },
     movestep(index){
         clearInterval(this.invId0)
+
         this.invId0 = setInterval(() => {if(this.ind>500){ clearInterval(this.invId0);this.ind=0;
         }else{this.ind++;this.styleObject.left=-index*40-this.ind*0.08+"rem";}} ,1)
      
@@ -98,7 +126,7 @@ methods: {
       if(this.index==this.allProducts.length-2){
       this.index=1
       this. movestep (1)
-      }else{
+      }else {
       
 
       this.index++
@@ -117,14 +145,39 @@ methods: {
     },  
     addclass () {
         var index=this.index
-         if(typeof(this.$refs.mybox[index])=="undefined"){ return undefined}else{
-         this.$refs.mybox[index].style.backgroundColor = "red";
-         this.$refs.mybox[index-1].style.backgroundColor = "#67C23A";
+         if(typeof(this.$refs.mybox[index])=="undefined"){
+           return undefined
+           }else{
+           if(this.index==1){
+             for(var i=0;i<=this.allProducts.length-2;i++){
+               this.$refs.mybox[i].style.backgroundColor = "#67C23A";
+               this.$refs.mybox[1].style.backgroundColor = "red";
+              
+               }         
+            }
+            this.$refs.mybox[this.allProducts.length-2].style.backgroundColor = "#67C23A";
+            this.$refs.mybox[index+1].style.backgroundColor = "#67C23A";
+            this.$refs.mybox[index].style.backgroundColor = "red";
+            this.$refs.mybox[index-1].style.backgroundColor = "#67C23A";
          
-         if(this.index==2){this.$refs.mybox[this.allProducts.length-2].style.backgroundColor = "#67C23A";}} 
+           }  
         
-    },  
- }, 
+    }  
+ },
+ watch:{
+    
+　　allProducts(){
+       
+       this.index=1
+       this.ind=0
+       this.movestep(this.index)
+       this.addclass () 
+       
+       
+       console.log( this.index);
+
+     }
+}, 
    mounted () {
     this.runInv();
       

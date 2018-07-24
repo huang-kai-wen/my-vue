@@ -14,11 +14,11 @@
             <div class="panel-body">
                 
                 <li><el-button type="info"   @click="changeproducts ('recommend',true)"> 荔枝</el-button></li>
-                <li><el-button type="info" @click="changeproducts ()">龙眼</el-button></li>
-                <li><el-button type="info" @click="changeproducts ()">柑子</el-button></li>
-                <li><el-button type="info" @click="changeproducts ()">葡萄</el-button></li>
-                <li><el-button type="info" @click="changeproducts ()">菜干</el-button></li>
-                <li><el-button type="info" @click="changeproducts ()">青枣</el-button></li>
+                <li><el-button type="info" @click="changeproducts ('recommend',false)">龙眼</el-button></li>
+                <li><el-button type="info"  @click="changeproducts ('recommend',true)">柑子</el-button></li>
+                <li><el-button type="info" @click="changeproducts ('recommend',false)">葡萄</el-button></li>
+                <li><el-button type="info"  @click="changeproducts ('recommend',true)">菜干</el-button></li>
+                <li><el-button type="info" @click="changeproducts ('recommend',false)">青枣</el-button></li>
                 
             </div>
         </div>
@@ -74,7 +74,7 @@ export default {
 methods: {
   changeproducts (c,fdv) {
       var payload
-      var cds
+      var cd
      payload={cd:c,fd:fdv}
        console.log( payload.cd)
        this.$store.dispatch('resetProducts',payload)

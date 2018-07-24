@@ -46,11 +46,13 @@
   </div> 
   </div>
 
-
-
-   <div id="tip">
-    <div id="ft-22"><li>塘角鱼营养价值</li><span id="xuezi">塘角鱼又称胡子鲶、塘鲺鱼。主要</span></div>
-    <p>分布于中国南方各地江河湖泊。
+<div class="panel panel-default">
+  <div class="panel-heading">
+   <li>塘角鱼营养价值</li>
+  </div>
+  <div class="panel-body">
+    
+   <h4>塘角鱼又称胡子鲶、塘鲺鱼。主要分布于中国南方各地江河湖泊。
       胡子鲶科动物胡子鲶的肉。获得后，除去鳍与内脏，洗净鲜用。味甘，性平。能补脾益气，益肾兴阳。用于身体虚弱，小儿疳积;黄疸，慢性肝炎;鼻衄，时流时止，年久不断等。常与莲子、绿豆、大枣之类配用。此外，也用于肝肾不足，腰膝酸痛，阳痿。其肉嫩味美，可煎汤或煮粥食。
       中医认为，胡子鲶鱼味甘性温，有补中益阳，利小便，疗水肿等功效。
       鲶鱼营养丰富，每100克鱼肉中含水分64.1克、蛋白质14.4克，并含有多种矿物质和微量元素，特别适合体弱虚损、营养不良之人食用。
@@ -68,38 +70,61 @@
    【功能】滋阴养胃,催乳,利尿。主要用于脾胃不和,产后缺乳,浮肿,腰膝酸痛,鼻衄不止。<br>
 
   【验方】1.产后缺乳:用鲶鱼1条,去肠杂,熬汤,打荷包蛋,连续服用。2.治肾虚腰疼或耳聋:胡子鲶1条,黑豆100g,煮熟之。3.身体虚弱,经常鼻衄者:用胡子鲶l条,加糯米、油、盐熟食之,可断根。
-    </p>
-    <div id="ftl-11"><div id="qusta">当前食品安全条件下吃鱼知识问答</div></div>
-    <p>
-    问题：鱼类污染主要有哪些?<br>
+   </h4>
+  </div>
+</div>
 
-　　鱼体内的污染物主要来源于地理环境和人类活动造成的环境污染。生活在污水中的鱼，会富集水中的有毒金属和其他有害物质。在鱼类的各种污染物中，危害最大的是汞，它会侵犯人体中枢神经系统，造成语言和记忆障碍等，对胎儿和儿童尤为
-     明显，可能会影响智力。
-    </P>
-    <div class="signal">&nbsp</div>
-    <p>
-    问题：鱼类遭污染，我们还能吃吗?<br>
 
-　 即使鱼类有遭受污染的可能，吃鱼仍利大于弊。研究发现，吃鱼有助于保护视力、降低心脏病风险、促进发育、保护皮肤、提高脑力和精子数量、预防哮喘和关节疾病等。美国食品和药品管理局于今年初发   
-    布的“鱼类消费建议”指出，成年人每周应食用2～3份低汞鱼或贝类，约227～340克(烹饪前的可食部重量)。常见低汞鱼包括鳕鱼、鲑鱼、胡子鲶等;
-    </P>
-    <div class="signal">&nbsp</div>
-    <p>
-    问题：有的鱼尝起来有煤油味，网上披露说是为了在运输过程中保持鱼的存活率，这是真的吗?<br>
 
-　　运输过程中为了保持鱼鲜活，有的商贩会加入孔雀石绿，不过这是非法的，也不会产生煤油味。煤油味或其他异味，可能是鱼本身来自被污染水体，或运输过程中受到污染，也可能是商贩加入汽油等化学物质刺激鱼活动造成的。具体原因很难推测，但只要鱼出现异味，就一定存在问题，消费者不应购买、食用。
-    </P>
+<div class="panel panel-default">
+  <div class="panel-heading">
+     <div id="ftl-11"><div id="qusta">当前食品安全条件下吃鱼知识问答</div></div>
+  </div>
+  <div class="panel-body">
+  
+    <h2>
+      问题：鱼类污染主要有哪些?<br>
+    </h2>
+
+　　 <h3> 鱼体内的污
+       染物主要来源于地理环境和人类活动造成的环境污染。生活在污水中的鱼，会富集水中的有毒金属和其他有害物质。在鱼类的各种污染物中，危害最大的是汞，它会侵犯人体中枢神经系统，造成语言和记忆障碍等，对胎儿和儿童尤为
+        明显，可能会影响智力。
+    </h3>
     <div class="signal">&nbsp</div>
-    <p>
+    <h2>
+       问题：鱼类遭污染，我们还能吃吗?<br>
+    </h2>
+    <h3>
+　      即使鱼类有遭受污染的可能，吃鱼仍利大于弊。研究发现，吃鱼有助于保护视力、降低心脏病风险、促进发育、保护皮肤、提高脑力和精子数量、预防哮喘和关节疾病等。美国食品和药品管理局于今年初发   
+       布的“鱼类消费建议”指出，成年人每周应食用2～3份低汞鱼或贝类，约227～340克(烹饪前的可食部重量)。常见低汞鱼包括鳕鱼、鲑鱼、胡子鲶等;
+    </h3>
+    <div class="signal">&nbsp</div>
+    <h2>
+     问题：有的鱼尝起来有煤油味，网上披露说是为了在运输过程中保持鱼的存活率，这是真的吗?<br>
+    </h2>
+    <h3>
+　　  
+      运输过程中为了保持鱼鲜活，有的商贩会加入孔雀石绿，不过这是非法的，也不会产生煤油味。煤油味或其他异味，可能是鱼本身来自被污染水体，或运输过程中受到污染，也可能是商贩加入汽油等化学物质刺激鱼活动造成的。具体原因很难推测，但只要鱼出现异味，就一定存在问题，消费者不应购买、食用。
+    </h3>
+    <div class="signal">&nbsp</div>
+    <h2>
     　问题：怎么吃鱼可以将风险降到最低?<br>
-
+    </h2>
+    <h3>
 　　除了鱼的种类，鱼龄和体型越大，体内积聚的有害物质就可能越多。建议买鱼选个头“八分大”左右的，如鲤鱼和武昌鱼以1斤半、鲫鱼0.5～1斤、塘角鱼0.2～0.4斤，草鱼4～5斤的为宜。吃鱼种类应尽量丰富些，有条件的话还应多吃些虾、蟹、蚝等贝类。可以通过望、闻、按来挑选鱼：好的鱼应该是鱼眼饱满凸出，角膜透明清亮、富有弹性，鱼身有透明的黏液，鳞片有光泽，且与鱼体贴附紧密，未有脱落;闻一闻鱼鳃，海水鱼应该具有咸腥味，淡水鱼则是土腥味，如果有酸味或煤油味等异味，就不要购买了;最后，用手指按压一下鱼身，好的鱼肉质结实有弹性，指压后凹陷立即消失。
 
 　　烹调方法方面，蒸最为健康;煮或炖位居其次，部分营养可能会流失于汤水中;如果将鱼油炸，损失可就大了，不仅破坏DHA这类不饱和脂肪酸，使鱼失去低脂优势，还容易产生有害物质。需要提醒的是，鱼籽由于胆固醇较高，“三高”人群最好少吃或将其剔除,对于健康人群，鱼子是鱼热量最高的可食用部分。
-    </P>
+    </h3>
   </div>
+</div>
+
+
+
+
+
    </div> 
 
+  
   
  
 
@@ -142,17 +167,19 @@
 
 <div id="footer" >
    <div id="log" class="flex">
+   <div  id="f-33" >
       <img src="../../../static/images/logo.jpg" alt="Third slide" ><br>
       <span>&nbsp;</span><br>
       <img src="../../../static/images/erweima.jpg" alt="二维码" class="fl mt10" /><br>
       <span> 官方微信更多最新资讯<br>，请关注我们的公众号</span> 
    </div>
+   </div>
    <div id="con" class="flex1">
-       <h9 >高床岭现代农场 &nbsp;|&nbsp;绿色安全农产品生产基地</h9><br>
-       <li class="glyphicon glyphicon-earphone">咨询热线：15607812256</li><br>
-       <li class="glyphicon glyphicon-envelope">E-mail：1054547034@qq.com</li><br>
-       <span>地址(Add):广西钦州市长滩镇高床岭南麓</span><br>
-       <span>备案号：桂ICP备4651321654号&nbsp;|&nbsp;高床农业&nbsp;</span> 
+       <li >高床岭现代农场 &nbsp;|&nbsp;绿色安全农产品生产基地</li><br>
+       <li class="glyphicon glyphicon-earphone ">咨询热线：15607812256</li><br>
+       <li class="glyphicon glyphicon-envelope ">E-mail：1054547034@qq.com</li><br>
+        <span>地址(Add):广西钦州市长滩镇高床岭南麓</span><br>
+       <span>备案号：桂ICP备4651321654号&nbsp;|&nbsp;高床农业&nbsp;</span> <br>
     </div>
     </div>
 
@@ -204,7 +231,7 @@ export default {
 
              $(".box").css("font-size", strscre2);
 
-              alert(dpr*scre)
+             // alert(dpr*scre)
         }); 
       }); 
     }
@@ -262,7 +289,11 @@ height:7rem;
     height: 1rem;
     
 }
-
+h2{font-size:0.5rem;}
+h3{font-size:0.4rem;}
+h4{font-size:0.3rem;}
+span{font-size:0.2rem;}
+li{ list-style-type:none;}
 .flex-item {
    
     width: 2rem;
@@ -278,14 +309,14 @@ height:7rem;
     border-bottom-color:#AAAAAA;
 }
 #ftl-11{
-  width: 7.3rem; 
+  width: 8.3rem; 
   background-color:#00FF00; 
-  height: 0.5rem;
+  height: 0.8rem;
 }
 #qusta{
-
-   width: 6.8rem; 
-   height: 0.5rem;
+   font-size:0.5rem;
+   width: 8.3rem; 
+   height: 0.8rem;
    margin-left:0.5rem;
    -webkit-transform: skew(30deg);
 
@@ -300,7 +331,7 @@ height:7rem;
 #ft-22 li {
 
    list-style:none;
-   height: 0.6rem;
+   width:10rem;
    border-width: 15px;
    width: 3.4rem;
    border-top-left-radius:0.2em 0.2em;
@@ -343,30 +374,44 @@ height:7rem;
   width:3.5rem;
 }
 #footer{
-width:9rem;
+width:10rem;
+height:5rem;
+overflow:hidden;
 margin-left:0.5rem;
-margin-top:0.5rem;
+margin-top:0.1rem;
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: flex-end;
     align-items: flex-end;
 }
 .flex{
+  
   -webkit-flex: 2;
-    flex: 1.5;
+    flex: 1;
+    overflow: auto;
 }
-.flex1{
-   margin-left:0.5rem;
-  -webkit-flex: 2;
-  flex: 2;
-  -webkit-flex-direction: column-reverse;
-    flex-direction: column-reverse;
-    display: -webkit-flex;
-    display: flex;
+.flex *{
 
+  text-align: center;  
+  font-size:0.3rem;
+  margin:auto;
+}
+.flex1 *{font-size:0.3rem;
+ height:0.5rem
+}
+.flex1{ 
+
+  height:7rem;
+   margin-left:0.5rem;
+  flex: 2;
+  display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column-reverse;
+    flex-direction: column-reverse;
 }
 #about {
 height: auto;
 
 }
+
 </style> 

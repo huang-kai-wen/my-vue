@@ -76,15 +76,14 @@
                     this.imgTimesY=this.img.height/this.imgwrap.offsetHeight
                     this.init=true
                 }
-
                 if(!this.canvas){
                     this.canvas=document.createElement('canvas')
                     this.canvas.className='mouse-cover-canvas'
                     this.canvas.style.position='absolute'
                     this.canvas.style.left=$('.magnifier-box ').offset().left+$('.pic').width()+45+'px'
-                    this.canvas.style.top=this.imgbox.offsetTop+240+'px'
+                    this.canvas.style.top=this.imgbox.offsetTop+300+'px'
                     this.canvas.style.border='1px solid #eee'
-                    this.canvas.style.zIndex='99999'
+                    this.canvas.style.zIndex='9999'
                     this.canvas.height=this.imgbox.offsetHeight
                     this.canvas.width=this.imgbox.offsetWidth
                     this.canvas.style.display='none'
@@ -98,7 +97,6 @@
                     return false
                 }
                 let _this=this
-
                 //获取实际的offset
                 function offset(curEle){
                     var totalLeft = null,totalTop = null,par = curEle.offsetParent;
@@ -124,7 +122,6 @@
                         top:totalTop
                     }
                 }
-
                 function getXY(eve) {
                     return {
                         x : eve.clientX -(_this.cover.offsetWidth/2),
@@ -172,7 +169,6 @@
                     e.currentTarget.addEventListener("mousewheel",function(ev){
                         ev.preventDefault();
                     },false);
-
                     e.currentTarget.addEventListener("DOMMouseScroll",function(ev){
                         ev.preventDefault();
                     },false);
@@ -196,8 +192,9 @@
 <style  scoped>
   .magnifier-box{
         width: 100%;
-        height: 100%;
-        display: flex;
+       
+        height: 28rem;
+        
         justify-content: center;
         align-items: center;
         overflow: hidden;
@@ -219,5 +216,9 @@
             width:100%;
             height:100%;
         }
-    }  
+    } 
+    .pic{
+    margin-left:-13rem;
+     margin-top:5rem;
+    } 
 </style>

@@ -52,7 +52,7 @@
       'getregissee',
      ])},
       components: {
-          thisforget: forget,
+         thisforget: forget,
           thislog: log,
          thisregis: regis, 
         }
@@ -74,7 +74,7 @@
         margin-top:-28rem;
         margin-left: -20rem;
         width: 350px;
-        height: auto;
+        height: 480px;
         min-height: 300px;
         padding: 30px 20px 20px;
         border-radius: 8px;
@@ -93,8 +93,8 @@
     }
     .loginPage p:hover{color:red;}
     .loginPage p{
-       margin-left:30rem;
-      margin-top:-4rem;
+       margin-left:310px;
+      margin-top:-40px;
       font-size:3rem;
     }
     .usercomt{

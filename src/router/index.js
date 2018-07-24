@@ -8,6 +8,7 @@ import user from './../components/user/usedcar '
 import about from './../components/about'
 import aboutus from './../components/aboutus'
 import prodetail from './../components/prodetail'
+import product from './../components/home/product'
 Vue.use(Router)
 
 export default new Router({
@@ -43,6 +44,16 @@ export default new Router({
       name: 'user',
       component: user
       				
+    }, {
+      path: '/product',
+      name: 'product',
+      component: product 
+              
+    }, {
+      path: '/regis',
+      name: 'regis',
+      component: regis 
+              
     }
   ]
 })

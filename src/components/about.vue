@@ -1,13 +1,15 @@
 <template>
 <div>
-  <div class="aboutus">
-           <p> <a href="#C1"><h>.&nbsp;&nbsp;公司简介</h></a></p>
-           <p> <a href="#C2"><h>.&nbsp;&nbsp;企业文化</h></a></p>
-           <p> <a href="#C3"><h>.&nbsp;&nbsp;组织结构</h></a></p>
-           <p> <a href="#C4"> <h>.&nbsp;&nbsp;经营模式</h></a></p>
-            <a href="http://wpa.qq.com/msgrd?v=3&uin=1054547034&site=qq&menu=yes" title="联系我们"><img src="./../../static/images/contact.png" alt="联系我们" /></a>
+       <div class="aboutus1" ref="myspanner" >
+      
+           <p > <a href="#C1">.&nbsp;&nbsp;公司简介</a></p>
+           <p> <a href="#C2">.&nbsp;&nbsp;企业文化</a></p>
+           <p> <a href="#C3">.&nbsp;&nbsp;组织结构</a></p>
+           <p  > <a href="#C4"> .&nbsp;&nbsp;经营模式</a></p>
+           <p id="my-pic"><a href="http://wpa.qq.com/msgrd?v=3&uin=1054547034&site=qq&menu=yes" title="联系我们" class="my-pic"><img src="./../../static/images/contact.png" alt="联系我们" /></a></p>
+        
         </div>
-        <div id="cont">
+<div id="cont">
         
 <li class="item" > 公司简介</li><br>
 
@@ -57,22 +59,35 @@
 
 </p>
 </div> 
+
 </div>   
 </template>
 
 <script>
-
+export default {
+  
+}
  
 
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.aboutus{margin-left:1rem;width:28rem;}
-.aboutus p:hover{background-color:#008800;}
-.aboutus p {background-color:#33FF33;width:28rem;height:5rem;border:0.5rem;margin-top:1.5rem;overflow:hidden;}
-.aboutus p a h{width:28rem;height:5rem;top:2.5rem;line-height: 5rem;font-size:1.8rem;}
-#cont{margin-left:32.5rem;width:110rem;margin-top:-35rem;}
+.aboutus1{margin-left:1rem;width:28rem;position:fixed;height:25rem;}
+.aboutus1 p:hover{background-color:#008800;}
+.aboutus1 p {background-color:#33FF33;width:280px;height:4rem;border:0.5rem;margin-top:1.5rem;overflow:hidden;}
+.aboutus1 p a {width:180px;height:5rem;top:2.5rem;line-height: 5rem;font-size:1.8rem;}
+#cont{
+  
+ margin-left:32.5rem;width:110rem;margin-bottom:0rem;
+     height:110rem;
+}
 #cont p{text-align: left;margin-top:1.5rem;}
 .item{float:left;font-size:2rem;}
+#black{height:15rem;}
+#my-pic{
+   height:auto;
+ 
+
+}
 </style>

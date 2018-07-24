@@ -11,12 +11,17 @@
 <div class="container">
 <div class="col-xs-3 col-sm-1" 
          style="margin-left:2rem;
-         "><a  @click="changembprompt()">{{this.getmbprompt}}</a>
+         "><a  @click="changembprompt()"></a>
+
+   </div >
+   <div class="col-xs-3 col-sm-1" 
+         style="margin-left:2rem;
+         "><a ><router-link to="/regis">注册</router-link ></a>
 
    </div >
   <div class="col-xs-3 col-sm-1" 
          style="margin-left:2rem;
-         "><a  @click="changeusersee()">注册/登录</a>
+         "><a  @click="changeusersee()">登录</a>
 
    </div >
    
@@ -54,11 +59,16 @@ export default {
      this.$store.dispatch('toogleusestate','usesee')
     },
     changembprompt() {
-     this.$store.dispatch('tooglemobilestate')
+      var scre=document.documentElement.clientWidth
+      if(scre<=920){
+      this.$store.dispatch('tooglemobilestate')
+      }else{
+       alert("我想，嗯.......  你用的不是手机")
+      }
     },
      logout:function(formName){
                this.$store.dispatch('userlogout',"")
-               window.location.href ="http://192.168.0.7:8080/";
+               window.location.href ="http://aokxf.com";
       
       },
    usercenter() {
@@ -129,7 +139,7 @@ filter:alpha(opacity=50);}
   }
  .container{
   position:absolute;
-  left:90rem;
+  left:75rem;
   top:21rem;
  }
  .col-xs-3 {

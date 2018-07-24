@@ -9,7 +9,7 @@
 
 <script>
 import pre from './home/predecessor'
-
+import product from './home/product'
 import comtain from './home/comtain'
 import mhid from './home/hid'
 export default {
